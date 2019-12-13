@@ -1,0 +1,33 @@
+{
+"Version": "2012-10-17",
+"Statement": [
+{
+"Sid": "VisualEditor0",
+"Effect": "Allow",
+"Action": "",*
+"Resource": ""*
+},
+{
+"Effect": "Deny",
+"Action": [
+"ec2:RunInstances"
+],
+"NotResource": [
+"arn:aws:ec2:::image/*",*
+"arn:aws:ec2:::snapshot/*",*
+"arn:aws:ec2:::subnet/",*
+"arn:aws:ec2:::network-interface/",*
+"arn:aws:ec2:::security-group/",*
+"arn:aws:ec2:::key-pair/"*
+],
+"Condition": {
+"StringNotEquals": {
+"aws:TagKeys": "Project"
+},
+"StringNotEqualsIgnoreCase": {
+"aws:TagKeys": "BusinessUnit"
+}
+}
+}
+]
+}

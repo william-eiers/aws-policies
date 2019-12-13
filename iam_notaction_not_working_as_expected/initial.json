@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ListOfNotAllowed",
+            "Effect": "Allow",
+            "NotAction": [
+                "ec2:CreateVpc",
+                "ec2:DeleteVpc",
+                "ec2:ModifyVpcAttribute",
+                "ec2:*Vpn*",
+                "ec2:*Gateway*",
+                "ec2:*Route*",
+                "ec2:*NetworkAcl*",
+                "ec2:*DeleteSubnet*",
+                "ec2:*CreateSubnet*",
+                "ec2:*DhcpOptions*",
+                "ec2:*SecurityGroup*",
+                "ec2:*AssociateAddress*",
+                "ec2:*KeyPair*",
+                "sqs:AddPermission",
+                "sqs:CreateQueue",
+                "sqs:DeleteQueue",
+                "sqs:RemovePermission",
+                "sns:AddPermission",
+                "sns:CreateTopic",
+                "sns:DeleteTopic",
+                "sns:RemovePermission"
+            ],
+            "Resource": [
+                "arn:aws:ec2:::*",
+                "arn:aws:sqs:::*",
+                "arn:aws:sns:::*"
+            ]
+        }
+    ]
+}

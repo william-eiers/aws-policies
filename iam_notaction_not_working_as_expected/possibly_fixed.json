@@ -1,0 +1,12 @@
+{
+"Sid": "AllowAllEc2Actions",
+"Effect":"Allow",
+"Action":"ec2:*",
+"Resource":"*"
+} ,
+{
+"Sid":"ListOfDeniedEc2Actions",
+"Effect":"Deny",
+"Action":"ec2:{NotAllowedActions}",
+"Resource":"*"
+}

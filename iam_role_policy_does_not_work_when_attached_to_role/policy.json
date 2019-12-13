@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "ec2:*",
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Action": "ec2:RunInstances",
+            "Effect": "Deny",
+            "Resource": "arn:aws:ec2:*:123456789012:instance/*",
+            "Condition": {
+                "StringNotLikeIfExists": {
+                    "ec2:InstanceType": [
+                        "t1.*",
+                        "t2.*",
+                        "m3.*"
+                    ]
+                }
+            }
+        }
+    ]
+}
